@@ -24,7 +24,7 @@ app.use(
 );
 
 
-
+console.log(`Fillout Base URL: ${process.env.FILLOUT_BASE_URL}`)
 app.listen(process.env.PORT, () => {
     console.log(`Server running at http://localhost:${process.env.PORT}`);
 })
