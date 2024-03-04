@@ -4,3 +4,5 @@ const router = express.Router();
 router.get('/health', async (req, res) => {
     res.send('UP');
 });
+
+module.exports = router;
