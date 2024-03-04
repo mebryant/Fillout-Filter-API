@@ -1,0 +1,28 @@
+
+const filterRoute = require('./app/routes/filter');
+const swagOptions = require('./app/configs/swagger');
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+require("dotenv").config();
+
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+app.use(filterRoute);
+
+// Swagger Implementation
+const specs = swaggerJsdoc(swagOptions.options);
+
+app.use(
+    swagOptions.base_url,
+    swaggerUi.serve,
+    swaggerUi.setup(specs)
+);
+
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server running at http://localhost:${process.env.PORT}`);
+})
