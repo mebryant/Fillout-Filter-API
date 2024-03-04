@@ -1,5 +1,6 @@
 
 const filterRoute = require('./app/routes/filter');
+const healthRoute = require('./app/routes/health');
 const swagOptions = require('./app/configs/swagger');
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
@@ -11,6 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use(filterRoute);
+app.use(healthRoute);
 
 // Swagger Implementation
 const specs = swaggerJsdoc(swagOptions.options);
