@@ -23,6 +23,7 @@ app.use(
     swaggerUi.setup(specs)
 );
 
+console.log(`API KEY :: ${process.env.FILLOUT_API_KEY}`)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running at http://localhost:${process.env.PORT}`);
