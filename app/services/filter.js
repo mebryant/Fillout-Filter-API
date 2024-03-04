@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 
 const axiosConfig = {
-    headers: { Authorization: `Bearer ${process.env.API_KEY}`}
+    headers: { Authorization: `Bearer ${process.env.FILLOUT_API_KEY}`}
 }
 
 async function getByFormId(req, res) {
