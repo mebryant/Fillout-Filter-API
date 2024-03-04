@@ -20,6 +20,10 @@ const options = {
             url: "http://localhost:3000",
             description: "Localhost"
           },
+          {
+            url: "https://fillout-filter-api-ejgt.onrender.com",
+            description: "Cloud URL"
+          }
         ],
         paths: {
             "/{formId}/filteredResponses":{
