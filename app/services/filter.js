@@ -74,8 +74,10 @@ function filterResponseByQuestions(questions, filters){
 function filtersToObject(filter){
     if(Array.isArray(filter)){
         return filter.map(f => JSON.parse(f))
-    } else {
+    } else if(filter){
         return [JSON.parse(filter)]
+    } else {
+        return []
     }
 }
 
