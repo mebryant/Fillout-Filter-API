@@ -6,7 +6,7 @@
 To start add a `.env` file to the base of this project with the following keys populated:
 ```yaml
 PORT=
-API_KEY=
+FILLOUT_API_KEY=
 FILLOUT_BASE_URL=
 ```
 
