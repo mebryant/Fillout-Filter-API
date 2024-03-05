@@ -10,6 +10,7 @@ async function getByFormId(req, res) {
     }
 
     console.log(`GET :: ${process.env.FILLOUT_BASE_URL}/v1/api/forms/${formId}/submissions?${formatQueryParams(queryParams)}`)
+
     await axios.get(`${process.env.FILLOUT_BASE_URL}/v1/api/forms/${formId}/submissions?${formatQueryParams(queryParams)}`, {
         headers: { Authorization: `Bearer ${process.env.FILLOUT_API_KEY}`}
     })
@@ -25,7 +26,6 @@ async function getByFormId(req, res) {
             });
         })
         .catch((e) => {
-            console.log(e);
             if(e.response.data){
                 res.status(e.response.data.statusCode).send(e.response.data.message);
             } else {
